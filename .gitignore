@@ -1,0 +1,12 @@
+/*.zip
+/*.jpg
+/*.png
+/lesson*
+/stuff.js
+/homework*/node_modules
+/React-Clear
+/node_modules
+/*/node_modules
+/project-client/node_modules
+/project-server/node_modules
+/project-server/node_modules/
