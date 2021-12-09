@@ -22,4 +22,7 @@ db.sequelize = sequelize;
 db.user = require('./users.model.js')(sequelize, Sequelize)
 db.score = require('./scores.model.js')(sequelize, Sequelize)
 
+db.user.hasMany(db.score, {as: "scores", foreignKey: "userID"})
+db.score.belongsTo(db.user, {as: "user", foreignKey: "userID"})
+
 module.exports = db;

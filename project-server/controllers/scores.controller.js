@@ -1,5 +1,5 @@
 const db = require('../models')
-const {request} = require("express");
+// const {request} = require("express");
 const Score = db.score
 
 exports.findAll = (req, res) => {
@@ -14,7 +14,10 @@ exports.findAll = (req, res) => {
 
 exports.findOne = (req, res) => {
     const id = req.params.id
-    Score.findByPk(id)
+    Score.findByPk(id,
+        {
+            include: ["user"]
+        })
         .then(data=>{
             if (!data) {
                 return res.status(404).send({message: "Not found"})
