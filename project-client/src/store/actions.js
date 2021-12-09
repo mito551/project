@@ -1,3 +1,5 @@
 export const LOGIN = "LOGIN"
 export const LOGOUT = "LOGOUT"
 export const FETCH_USERS = "FETCH_USERS"
+export const FETCH_SCORES = "FETCH_SCORES"
+export const SUBMIT_SCORE = "SUBMIT_SCORE"

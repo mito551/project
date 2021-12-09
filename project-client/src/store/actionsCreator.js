@@ -1,4 +1,4 @@
-import {FETCH_USERS, LOGIN, LOGOUT} from "./actions";
+import {FETCH_SCORES, FETCH_USERS, LOGIN, LOGOUT, SUBMIT_SCORE} from "./actions";
 
 const URL = "http://localhost:8080/api"
 
@@ -51,6 +51,27 @@ export const register = user => {
     }
 }
 
+export const submitScore = score => {
+    return async dispatch => {
+        try {
+            const response = await fetch(`${URL}/scores`, {
+                method: "POST",
+                body: JSON.stringify(score),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            const data = await response.json()
+            if (response.status === 200) {
+                dispatch(setScore(data))
+            }
+        }
+        catch (e) {
+            console.log(e.message)
+        }
+    }
+}
+
 export const getAllUsers = () => {
     return async dispatch => {
         try{
@@ -70,6 +91,25 @@ export const getAllUsers = () => {
     }
 }
 
+export const getAllScores = () => {
+    return async dispatch => {
+        try{
+            const response = await fetch(`${URL}/scores`, {
+                headers: {
+                    "Content-Type" : "application/json",
+                    "x-access-token": localStorage.getItem("apiKeyToken"),
+                }
+            })
+            const data = await response.json()
+            dispatch(setAllScores(data))
+        }
+        catch (e) {
+            console.log(e.message)
+        }
+
+    }
+}
+
 export const logout = () => {
     return dispatch => {
         localStorage.removeItem("apiKeyToken")
@@ -81,6 +121,20 @@ export const logout = () => {
 export const setAllUsers = data => (
     {
         type: FETCH_USERS,
+        payload: data
+    }
+)
+
+export const setAllScores = data => (
+    {
+        type: FETCH_SCORES,
+        payload: data
+    }
+)
+
+export const setScore = data => (
+    {
+        type: SUBMIT_SCORE,
         payload: data
     }
 )

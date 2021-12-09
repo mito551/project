@@ -2,6 +2,7 @@ import React from "react";
 import {NavLink, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {logout} from "../store/actionsCreator";
+import './Navigation.pcss'
 
 const Navigation = props => {
 
@@ -18,8 +19,8 @@ const Navigation = props => {
     const renderInAuth = () => {
         return (
             <>
-                <NavLink className="nav-link" to="users">Users</NavLink>
-                <button className="nav-link btn btn-link" onClick={() => {
+                <NavLink className="nav_item" to="users">Users</NavLink>
+                <button className="nav_item" onClick={() => {
                     dispatch(logout())
                 }}>LogOut
                 </button>
@@ -30,10 +31,10 @@ const Navigation = props => {
     const renderOutAuth = () => {
         return (
             <>
-            <NavLink className="nav-link" to="/login">
+            <NavLink className="nav_item" to="/login">
                 Login
             </NavLink>
-            <NavLink className="nav-link" to="/signup">
+            <NavLink className="nav_item" to="/signup">
                 Register
             </NavLink>
             </>
@@ -42,8 +43,14 @@ const Navigation = props => {
 
     return (
         <nav className="nav">
-            <NavLink className="nav-link" to="/">
+            <NavLink className="nav_item" to="/">
                 Dash
+            </NavLink>
+            <NavLink className="nav_item" to="/minesweeper">
+                Minesweeper
+            </NavLink>
+            <NavLink className="nav_item" to="/leaderboards">
+                Leaderboards
             </NavLink>
 
             {
