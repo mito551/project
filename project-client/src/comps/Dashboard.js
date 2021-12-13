@@ -1,5 +1,5 @@
 import React from "react";
 
 export const Dashboard = () => (
-    <div>Welcome Screen</div>
+    <div className="title wrapper-dapper">Welcome Screen</div>
 )

@@ -6,6 +6,7 @@ module.exports = app => {
 
     router.get('/',[authJWT.verifyToken], controller.findAll)
     router.get('/:id',[authJWT.verifyToken], controller.findOne)
+    router.post('/', controller.create)
 
     app.use('/api/scores', router)
 }

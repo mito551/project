@@ -35,23 +35,23 @@ export const Register = () => {
     }
 
     return (
-        <div className="w-50 mx-auto mt-5">
+        <div className="wrapper-dapper">
             {/*<h3>Login</h3>*/}
-            <form onSubmit={submitFormHandler}>
+            <form onSubmit={submitFormHandler} className="form">
                 {/* <div className="mb-3 row"></div> */}
-                <label htmlFor="username" className="mb-3 row col-sm-2 col-form-label">Username</label>
-                <input type="text" id="username" name="username" className="mb-3 row"
+                <label htmlFor="username" className="form-item">Username</label>
+                <input type="text" id="username" name="username" className="form-item"
                        onChange={changeFieldHandler} placeholder="Vasya69" value={user.username}
                 />
-                <label htmlFor="email" className="mb-3 row col-sm-2 col-form-label">Email</label>
-                <input type="email" id="email" name="email" className="mb-3 row"
+                <label htmlFor="email" className="form-item">Email</label>
+                <input type="email" id="email" name="email" className="form-item"
                        onChange={changeFieldHandler} placeholder="email@email.com" value={user.email}
                 />
-                <label htmlFor="password" className="mb-3 row col-sm-2 col-form-label">Password</label>
-                <input type="password" id="password" name="password" className="mb-3 row"
+                <label htmlFor="password" className="form-item">Password</label>
+                <input type="password" id="password" name="password" className="form-item"
                        onChange={changeFieldHandler} value={user.password}
                 />
-                <button type="submit" className="btn btn-success">Sign In</button>
+                <button type="submit" className="form-item">Sign In</button>
             </form>
         </div>
     )

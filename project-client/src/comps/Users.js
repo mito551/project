@@ -17,10 +17,10 @@ export const Users = () => {
 
     return !users.length
         ? (
-            <h3>No Users available</h3>
+            <h3 className="wrapper-dapper">No Users available</h3>
         )
         : (
-            <div className="list-group">
+            <div className="wrapper-dapper">
                 {users.map(u => <div key={u.id} className="list-group-item">{u.email}</div>)}
             </div>
         )

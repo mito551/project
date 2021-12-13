@@ -1,0 +1,27 @@
+.nav {
+    grid-column: 1 / 2;
+    grid-row: 1 / 12;
+    display: flex;
+    flex-direction: column;
+    background-color: #2f5448;
+    height: 100vh;
+    width: 104px;
+    border-right: 2px black solid;
+
+    &_item {
+        margin: 7px;
+        color: #6cbea4;
+        word-wrap: break-word;
+        padding: 10px;
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        transition-duration: 0.2s;
+        background-color: #4e8875;
+        cursor: pointer;
+
+        &:hover{
+            border-radius: 25px;
+        }
+    }
+}

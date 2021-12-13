@@ -28,3 +28,20 @@ exports.findOne = (req, res) => {
             res.send({message: err.message})
         })
 }
+
+exports.create = (req, res) => {
+
+    const score = {
+        userID: req.body.userID,
+        score: req.body.score,
+        gameTime: req.body.gameTime
+    }
+
+    Score.create(score)
+        .then(data => {
+            res.send(data)
+        })
+        .catch(err => {
+            res.status(500).send({message: err.message || 'Internal server error: An error occurred when creating'})
+        })
+}

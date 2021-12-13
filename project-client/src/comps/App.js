@@ -21,7 +21,7 @@ const App = props => {
     })
 
     return (
-        <div className="nav">
+        <div className="wrapper">
             <Navigation />
             <Routes>
                 <Route path="/" element={<Dashboard />} />

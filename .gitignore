@@ -10,3 +10,4 @@
 /project-client/node_modules
 /project-server/node_modules
 /project-server/node_modules/
+/src/img/*

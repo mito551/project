@@ -25,7 +25,7 @@
   "scripts": {
     "build:pcss": "postcss src/index.pcss -o src/index.css",
     "watch:pcss": "postcss src/index.pcss -o src/index.css -w",
-    "start": "npm-run-all -p watch:pcss start-js",
+    "start": "watch:pcss",
     "start-js": "react-scripts start",
     "build-js": "react-scripts build",
     "build": "npm-run-all build:pcss build-js",
@@ -49,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "parcel": "^2.0.1"
   }
 }

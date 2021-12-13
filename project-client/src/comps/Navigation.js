@@ -19,11 +19,11 @@ const Navigation = props => {
     const renderInAuth = () => {
         return (
             <>
-                <NavLink className="nav_item" to="users">Users</NavLink>
-                <button className="nav_item" onClick={() => {
+                <NavLink className="nav_item icon icon-users" to="users"> </NavLink>
+                <div className="nav_item icon icon-logout" onClick={() => {
                     dispatch(logout())
-                }}>LogOut
-                </button>
+                }}>
+                </div>
             </>
         )
     }
@@ -31,11 +31,11 @@ const Navigation = props => {
     const renderOutAuth = () => {
         return (
             <>
-            <NavLink className="nav_item" to="/login">
-                Login
+            <NavLink className="nav_item icon icon-login" to="/login">
+
             </NavLink>
-            <NavLink className="nav_item" to="/signup">
-                Register
+            <NavLink className="nav_item icon icon-signup" to="/signup">
+
             </NavLink>
             </>
         )
@@ -43,14 +43,14 @@ const Navigation = props => {
 
     return (
         <nav className="nav">
-            <NavLink className="nav_item" to="/">
-                Dash
+            <NavLink className="nav_item icon icon-home" to="/">
+
             </NavLink>
-            <NavLink className="nav_item" to="/minesweeper">
-                Minesweeper
+            <NavLink className="nav_item icon icon-mine" to="/minesweeper">
+
             </NavLink>
-            <NavLink className="nav_item" to="/leaderboards">
-                Leaderboards
+            <NavLink className="nav_item icon icon-leader" to="/leaderboards">
+
             </NavLink>
 
             {

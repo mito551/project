@@ -35,19 +35,19 @@ export const Login = () => {
     }
 
     return (
-        <div className="w-50 mx-auto mt-5">
+        <div className="wrapper-dapper">
             {/*<h3>Login</h3>*/}
-            <form onSubmit={submitFormHandler}>
+            <form className="form" onSubmit={submitFormHandler}>
                 {/* <div className="mb-3 row"></div> */}
-                <label htmlFor="email" className="mb-3 row col-sm-2 col-form-label">Email</label>
-                <input type="email" id="email" name="email" className="mb-3 row"
+                <label htmlFor="email" className="form-item">Email</label>
+                <input type="email" id="email" name="email" className="form-item"
                        onChange={changeFieldHandler} placeholder="email@email.com" value={user.email}
                 />
-                <label htmlFor="password" className="mb-3 row col-sm-2 col-form-label">Password</label>
-                <input type="password" id="password" name="password" className="mb-3 row"
+                <label htmlFor="password" className="form-item">Password</label>
+                <input type="password" id="password" name="password" className="form-item"
                        onChange={changeFieldHandler} value={user.password}
                 />
-                <button type="submit" className="btn btn-success">Sign In</button>
+                <button type="submit" className="">Sign In</button>
             </form>
         </div>
     )
